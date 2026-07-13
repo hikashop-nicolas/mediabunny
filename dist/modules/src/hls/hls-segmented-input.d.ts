@@ -5,10 +5,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { Input } from '../input.js.js';
-import { Segment, SegmentedInput, SegmentedInputTrackDeclaration, SegmentRetrievalOptions } from '../segmented-input.js.js';
-import { HlsDemuxer } from './hls-demuxer.js.js';
-import { type PsshBox } from '../isobmff/isobmff-misc.js.js';
+import { Input } from '../input.js';
+import { Segment, SegmentedInput, SegmentedInputTrackDeclaration, SegmentRetrievalOptions } from '../segmented-input.js';
+import { HlsDemuxer } from './hls-demuxer.js';
+import { type PsshBox } from '../isobmff/isobmff-misc.js';
 export type HlsSegment = Segment & {
     sequenceNumber: number | null;
     location: HlsSegmentLocation;

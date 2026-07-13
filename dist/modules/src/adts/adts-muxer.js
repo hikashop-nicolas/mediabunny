@@ -5,12 +5,12 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { buildAdtsHeaderTemplate, parseAacAudioSpecificConfig, writeAdtsFrameLength } from '../../shared/aac-misc.js.js';
-import { validateAudioChunkMetadata } from '../codec.js.js';
-import { Id3V2Writer } from '../id3.js.js';
-import { metadataTagsAreEmpty } from '../metadata.js.js';
-import { assert, toUint8Array } from '../misc.js.js';
-import { Muxer } from '../muxer.js.js';
+import { buildAdtsHeaderTemplate, parseAacAudioSpecificConfig, writeAdtsFrameLength } from '../../shared/aac-misc.js';
+import { validateAudioChunkMetadata } from '../codec.js';
+import { Id3V2Writer } from '../id3.js';
+import { metadataTagsAreEmpty } from '../metadata.js';
+import { assert, toUint8Array } from '../misc.js';
+import { Muxer } from '../muxer.js';
 export class AdtsMuxer extends Muxer {
     constructor(output, format) {
         super(output);

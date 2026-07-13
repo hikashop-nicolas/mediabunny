@@ -5,11 +5,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { EventEmitter, MaybePromise, Rotation } from './misc.js.js';
-import { MetadataTags, TrackDisposition } from './metadata.js.js';
-import { OutputFormat } from './output-format.js.js';
-import { AudioSource, MediaSource, SubtitleSource, VideoSource } from './media-source.js.js';
-import { PathedTarget, Target, TargetRequest } from './target.js.js';
+import { EventEmitter, MaybePromise, Rotation } from './misc.js';
+import { MetadataTags, TrackDisposition } from './metadata.js';
+import { OutputFormat } from './output-format.js';
+import { AudioSource, MediaSource, SubtitleSource, VideoSource } from './media-source.js';
+import { PathedTarget, Target, TargetRequest } from './target.js';
 /**
  * List of all track types.
  * @group Miscellaneous

@@ -5,9 +5,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { MediaCodec } from '../codec.js.js';
-import { FileSlice, Reader } from '../reader.js.js';
-import { Writer } from '../writer.js.js';
+import { MediaCodec } from '../codec.js';
+import { FileSlice, Reader } from '../reader.js';
+import { Writer } from '../writer.js';
 export interface EBMLElement {
     id: number;
     size?: number;

@@ -5,18 +5,18 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { AUDIO_CODECS, NON_PCM_AUDIO_CODECS, VIDEO_CODECS, } from './codec.js.js';
-import { getEncodableAudioCodecs, getFirstEncodableVideoCodec, Quality, QUALITY_HIGH, } from './encode.js.js';
-import { Input } from './input.js.js';
-import { Logging } from './logging.js.js';
-import { AudioSampleSink, EncodedPacketSink, VideoSampleSink, } from './media-sink.js.js';
-import { EncodedVideoPacketSource, EncodedAudioPacketSource, VideoSampleSource, AudioSampleSource, } from './media-source.js.js';
-import { assert, assertNever, ceilToMultipleOfTwo, clamp, isIso639Dash2LanguageCode, normalizeRotation, promiseWithResolvers, } from './misc.js.js';
-import { Output, OutputTrackGroup } from './output.js.js';
-import { Mp4OutputFormat } from './output-format.js.js';
-import { AudioSample, clampCropRectangle, getBytesPerSample, validateCropRectangle, } from './sample.js.js';
-import { validateMetadataTags } from './metadata.js.js';
-import { NullTarget } from './target.js.js';
+import { AUDIO_CODECS, NON_PCM_AUDIO_CODECS, VIDEO_CODECS, } from './codec.js';
+import { getEncodableAudioCodecs, getFirstEncodableVideoCodec, Quality, QUALITY_HIGH, } from './encode.js';
+import { Input } from './input.js';
+import { Logging } from './logging.js';
+import { AudioSampleSink, EncodedPacketSink, VideoSampleSink, } from './media-sink.js';
+import { EncodedVideoPacketSource, EncodedAudioPacketSource, VideoSampleSource, AudioSampleSource, } from './media-source.js';
+import { assert, assertNever, ceilToMultipleOfTwo, clamp, isIso639Dash2LanguageCode, normalizeRotation, promiseWithResolvers, } from './misc.js';
+import { Output, OutputTrackGroup } from './output.js';
+import { Mp4OutputFormat } from './output-format.js';
+import { AudioSample, clampCropRectangle, getBytesPerSample, validateCropRectangle, } from './sample.js';
+import { validateMetadataTags } from './metadata.js';
+import { NullTarget } from './target.js';
 const validateVideoOptions = (videoOptions) => {
     if (!videoOptions || typeof videoOptions !== 'object') {
         throw new TypeError('options.video, when provided, must be an object.');

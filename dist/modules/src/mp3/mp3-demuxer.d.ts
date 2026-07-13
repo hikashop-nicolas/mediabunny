@@ -5,16 +5,16 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { AudioCodec } from '../codec.js.js';
-import { Demuxer } from '../demuxer.js.js';
-import { Input } from '../input.js.js';
-import { InputAudioTrackBacking } from '../input-track.js.js';
-import { MetadataTags } from '../metadata.js.js';
-import { PacketRetrievalOptions } from '../media-sink.js.js';
-import { AsyncMutex } from '../misc.js.js';
-import { EncodedPacket } from '../packet.js.js';
-import { Mp3FrameHeader } from '../../shared/mp3-misc.js.js';
-import { Reader } from '../reader.js.js';
+import { AudioCodec } from '../codec.js';
+import { Demuxer } from '../demuxer.js';
+import { Input } from '../input.js';
+import { InputAudioTrackBacking } from '../input-track.js';
+import { MetadataTags } from '../metadata.js';
+import { PacketRetrievalOptions } from '../media-sink.js';
+import { AsyncMutex } from '../misc.js';
+import { EncodedPacket } from '../packet.js';
+import { Mp3FrameHeader } from '../../shared/mp3-misc.js';
+import { Reader } from '../reader.js';
 type Sample = {
     timestamp: number;
     duration: number;

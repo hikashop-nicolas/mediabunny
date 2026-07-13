@@ -5,10 +5,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { InputAudioTrack, InputTrack, InputVideoTrack } from './input-track.js.js';
-import { AnyIterable, Rotation } from './misc.js.js';
-import { EncodedPacket } from './packet.js.js';
-import { AudioSample, CropRectangle, VideoSample } from './sample.js.js';
+import { InputAudioTrack, InputTrack, InputVideoTrack } from './input-track.js';
+import { AnyIterable, Rotation } from './misc.js';
+import { EncodedPacket } from './packet.js';
+import { AudioSample, CropRectangle, VideoSample } from './sample.js';
 /**
  * Additional options for controlling packet retrieval.
  * @group Media sinks

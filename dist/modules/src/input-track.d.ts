@@ -5,14 +5,14 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { AudioCodec, MediaCodec, VideoCodec } from './codec.js.js';
-import { Input } from './input.js.js';
-import { PacketRetrievalOptions } from './media-sink.js.js';
-import { MaybePromise, Rational, Rotation } from './misc.js.js';
-import { TrackType } from './output.js.js';
-import { EncodedPacket, PacketType } from './packet.js.js';
-import { TrackDisposition } from './metadata.js.js';
-import { DurationMetadataRequestOptions } from './demuxer.js.js';
+import { AudioCodec, MediaCodec, VideoCodec } from './codec.js';
+import { Input } from './input.js';
+import { PacketRetrievalOptions } from './media-sink.js';
+import { MaybePromise, Rational, Rotation } from './misc.js';
+import { TrackType } from './output.js';
+import { EncodedPacket, PacketType } from './packet.js';
+import { TrackDisposition } from './metadata.js';
+import { DurationMetadataRequestOptions } from './demuxer.js';
 /**
  * Contains aggregate statistics about the encoded packets of a track.
  * @group Input files & tracks

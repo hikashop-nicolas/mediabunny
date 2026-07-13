@@ -5,11 +5,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { TrackType } from './output.js.js';
-import { MediaCodec } from './codec.js.js';
-import { DurationMetadataRequestOptions } from './demuxer.js.js';
-import { Input } from './input.js.js';
-import { InputTrackBacking } from './input-track.js.js';
+import { TrackType } from './output.js';
+import { MediaCodec } from './codec.js';
+import { DurationMetadataRequestOptions } from './demuxer.js';
+import { Input } from './input.js';
+import { InputTrackBacking } from './input-track.js';
 export type SegmentedInputMetadata = {
     name: string | null;
     bitrate: number | null;
@@ -58,7 +58,7 @@ export declare abstract class SegmentedInput {
     trackBackingsPromise: Promise<InputTrackBacking[]> | null;
     firstSegment: Segment | null;
     firstSegmentFirstTimestamps: WeakMap<Segment, number>;
-    firstTimestampCache: WeakMap<Input<import("./source.js.js").Source>, number>;
+    firstTimestampCache: WeakMap<Input<import("./source.js").Source>, number>;
     constructor(input: Input, path: string, trackDeclarations: SegmentedInputTrackDeclaration[] | null);
     abstract getFirstSegment(options: SegmentRetrievalOptions): Promise<Segment | null>;
     abstract getSegmentAt(timestamp: number, options: SegmentRetrievalOptions): Promise<Segment | null>;

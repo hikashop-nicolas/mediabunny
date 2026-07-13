@@ -5,8 +5,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import type { PsshBox } from './isobmff/isobmff-misc.js.js';
-import { MaybePromise } from './misc.js.js';
+import type { PsshBox } from './isobmff/isobmff-misc.js';
+import { MaybePromise } from './misc.js';
 /**
  * Base class representing an input media file format.
  * @group Input formats

@@ -5,10 +5,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { AUDIO_CODECS, buildAudioCodecString, buildVideoCodecString, getAudioEncoderConfigExtension, getVideoEncoderConfigExtension, inferCodecFromCodecString, PCM_AUDIO_CODECS, SUBTITLE_CODECS, VIDEO_CODECS, } from './codec.js.js';
-import { customAudioEncoders, customVideoEncoders } from './custom-coder.js.js';
-import { isFirefox } from './misc.js.js';
-import { validateCropRectangle } from './sample.js.js';
+import { AUDIO_CODECS, buildAudioCodecString, buildVideoCodecString, getAudioEncoderConfigExtension, getVideoEncoderConfigExtension, inferCodecFromCodecString, PCM_AUDIO_CODECS, SUBTITLE_CODECS, VIDEO_CODECS, } from './codec.js';
+import { customAudioEncoders, customVideoEncoders } from './custom-coder.js';
+import { isFirefox } from './misc.js';
+import { validateCropRectangle } from './sample.js';
 export const canEncodeVideoMemo = new Map();
 export const canEncodeAudioMemo = new Map();
 export const validateVideoEncodingConfig = (config) => {

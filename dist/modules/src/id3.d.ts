@@ -5,9 +5,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { MetadataTags } from './metadata.js.js';
-import { FileSlice } from './reader.js.js';
-import { Writer } from './writer.js.js';
+import { MetadataTags } from './metadata.js';
+import { FileSlice } from './reader.js';
+import { Writer } from './writer.js';
 export type Id3V2Header = {
     majorVersion: number;
     revision: number;

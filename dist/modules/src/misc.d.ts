@@ -5,7 +5,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { Bitstream } from '../shared/bitstream.js.js';
+import { Bitstream } from '../shared/bitstream.js';
 export declare function assert(x: unknown): asserts x;
 /**
  * Represents a clockwise rotation in degrees.

@@ -5,10 +5,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { AudioCodec, MediaCodec, SubtitleCodec, VideoCodec } from './codec.js.js';
-import { MaybePromise, Rotation } from './misc.js.js';
-import { EncodedPacket } from './packet.js.js';
-import { AudioSample, CropRectangle, VideoSample, VideoSampleResource } from './sample.js.js';
+import { AudioCodec, MediaCodec, SubtitleCodec, VideoCodec } from './codec.js';
+import { MaybePromise, Rotation } from './misc.js';
+import { EncodedPacket } from './packet.js';
+import { AudioSample, CropRectangle, VideoSample, VideoSampleResource } from './sample.js';
 export declare const canEncodeVideoMemo: Map<string, Promise<boolean>>;
 export declare const canEncodeAudioMemo: Map<string, Promise<boolean>>;
 /**

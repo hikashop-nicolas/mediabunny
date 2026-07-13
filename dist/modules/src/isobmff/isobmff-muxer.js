@@ -5,20 +5,20 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { free, ftyp, IsobmffBoxWriter, mdat, mfra, moof, moov, sidx, styp, vtta, vttc, vtte, } from './isobmff-boxes.js.js';
-import { Muxer } from '../muxer.js.js';
-import { Writer } from '../writer.js.js';
-import { BufferTarget } from '../target.js.js';
-import { assert, computeRationalApproximation, last, promiseWithResolvers, simplifyRational } from '../misc.js.js';
-import { MovOutputFormat, CmafOutputFormat } from '../output-format.js.js';
-import { inlineTimestampRegex } from '../subtitles.js.js';
-import { aacChannelMap, aacFrequencyTable, buildAacAudioSpecificConfig } from '../../shared/aac-misc.js.js';
-import { parsePcmCodec, PCM_AUDIO_CODECS, validateAudioChunkMetadata, validateSubtitleMetadata, validateVideoChunkMetadata, } from '../codec.js.js';
-import { MAX_ADTS_FRAME_HEADER_SIZE, MIN_ADTS_FRAME_HEADER_SIZE, readAdtsFrameHeader } from '../adts/adts-reader.js.js';
-import { FileSlice } from '../reader.js.js';
-import { concatNalUnitsInLengthPrefixed, extractAvcDecoderConfigurationRecord, extractHevcDecoderConfigurationRecord, iterateNalUnitsInAnnexB, serializeAvcDecoderConfigurationRecord, serializeHevcDecoderConfigurationRecord, } from '../codec-data.js.js';
-import { buildIsobmffMimeType } from './isobmff-misc.js.js';
-import { MAX_BOX_HEADER_SIZE, MIN_BOX_HEADER_SIZE } from './isobmff-reader.js.js';
+import { free, ftyp, IsobmffBoxWriter, mdat, mfra, moof, moov, sidx, styp, vtta, vttc, vtte, } from './isobmff-boxes.js';
+import { Muxer } from '../muxer.js';
+import { Writer } from '../writer.js';
+import { BufferTarget } from '../target.js';
+import { assert, computeRationalApproximation, last, promiseWithResolvers, simplifyRational } from '../misc.js';
+import { MovOutputFormat, CmafOutputFormat } from '../output-format.js';
+import { inlineTimestampRegex } from '../subtitles.js';
+import { aacChannelMap, aacFrequencyTable, buildAacAudioSpecificConfig } from '../../shared/aac-misc.js';
+import { parsePcmCodec, PCM_AUDIO_CODECS, validateAudioChunkMetadata, validateSubtitleMetadata, validateVideoChunkMetadata, } from '../codec.js';
+import { MAX_ADTS_FRAME_HEADER_SIZE, MIN_ADTS_FRAME_HEADER_SIZE, readAdtsFrameHeader } from '../adts/adts-reader.js';
+import { FileSlice } from '../reader.js';
+import { concatNalUnitsInLengthPrefixed, extractAvcDecoderConfigurationRecord, extractHevcDecoderConfigurationRecord, iterateNalUnitsInAnnexB, serializeAvcDecoderConfigurationRecord, serializeHevcDecoderConfigurationRecord, } from '../codec-data.js';
+import { buildIsobmffMimeType } from './isobmff-misc.js';
+import { MAX_BOX_HEADER_SIZE, MIN_BOX_HEADER_SIZE } from './isobmff-reader.js';
 export const GLOBAL_TIMESCALE = 57600; // LCM of a bunch of common frame rates (24, 25, 30, 60, 144, ...)
 const TIMESTAMP_OFFSET = 2_082_844_800; // Seconds between Jan 1 1904 and Jan 1 1970
 export const getTrackMetadata = (trackData) => {

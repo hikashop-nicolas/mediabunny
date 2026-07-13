@@ -5,7 +5,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { EventEmitter, FilePath, MaybePromise } from './misc.js.js';
+import { EventEmitter, FilePath, MaybePromise } from './misc.js';
 /**
  * The events emitted by a {@link Target}.
  * @group Output targets

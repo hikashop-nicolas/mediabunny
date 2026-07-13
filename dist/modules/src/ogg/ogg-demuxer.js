@@ -5,15 +5,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { OPUS_SAMPLE_RATE } from '../codec.js.js';
-import { parseModesFromVorbisSetupPacket, parseOpusIdentificationHeader, readVorbisComments } from '../codec-data.js.js';
-import { Demuxer } from '../demuxer.js.js';
-import { DEFAULT_TRACK_DISPOSITION } from '../metadata.js.js';
-import { assert, AsyncMutex, binarySearchLessOrEqual, findLast, last, roundIfAlmostInteger, toDataView, UNDETERMINED_LANGUAGE, } from '../misc.js.js';
-import { EncodedPacket, PLACEHOLDER_DATA } from '../packet.js.js';
-import { readBytes } from '../reader.js.js';
-import { buildOggMimeType, computeOggPageCrc, extractSampleMetadata } from './ogg-misc.js.js';
-import { findNextPageHeader, MAX_PAGE_HEADER_SIZE, MAX_PAGE_SIZE, MIN_PAGE_HEADER_SIZE, readPageHeader, } from './ogg-reader.js.js';
+import { OPUS_SAMPLE_RATE } from '../codec.js';
+import { parseModesFromVorbisSetupPacket, parseOpusIdentificationHeader, readVorbisComments } from '../codec-data.js';
+import { Demuxer } from '../demuxer.js';
+import { DEFAULT_TRACK_DISPOSITION } from '../metadata.js';
+import { assert, AsyncMutex, binarySearchLessOrEqual, findLast, last, roundIfAlmostInteger, toDataView, UNDETERMINED_LANGUAGE, } from '../misc.js';
+import { EncodedPacket, PLACEHOLDER_DATA } from '../packet.js';
+import { readBytes } from '../reader.js';
+import { buildOggMimeType, computeOggPageCrc, extractSampleMetadata } from './ogg-misc.js';
+import { findNextPageHeader, MAX_PAGE_HEADER_SIZE, MAX_PAGE_SIZE, MIN_PAGE_HEADER_SIZE, readPageHeader, } from './ogg-reader.js';
 export class OggDemuxer extends Demuxer {
     constructor(input) {
         super(input);

@@ -5,12 +5,12 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { OPUS_SAMPLE_RATE, validateAudioChunkMetadata } from '../codec.js.js';
-import { createVorbisComments, parseModesFromVorbisSetupPacket, parseOpusIdentificationHeader } from '../codec-data.js.js';
-import { assert, promiseWithResolvers, setInt64, toDataView, toUint8Array, } from '../misc.js.js';
-import { Muxer } from '../muxer.js.js';
-import { buildOggMimeType, computeOggPageCrc, extractSampleMetadata, OGGS, } from './ogg-misc.js.js';
-import { MAX_PAGE_SIZE } from './ogg-reader.js.js';
+import { OPUS_SAMPLE_RATE, validateAudioChunkMetadata } from '../codec.js';
+import { createVorbisComments, parseModesFromVorbisSetupPacket, parseOpusIdentificationHeader } from '../codec-data.js';
+import { assert, promiseWithResolvers, setInt64, toDataView, toUint8Array, } from '../misc.js';
+import { Muxer } from '../muxer.js';
+import { buildOggMimeType, computeOggPageCrc, extractSampleMetadata, OGGS, } from './ogg-misc.js';
+import { MAX_PAGE_SIZE } from './ogg-reader.js';
 const PAGE_SIZE_TARGET = 8192;
 export class OggMuxer extends Muxer {
     constructor(output, format) {

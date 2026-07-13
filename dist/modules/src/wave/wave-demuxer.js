@@ -5,12 +5,12 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { Demuxer } from '../demuxer.js.js';
-import { DEFAULT_TRACK_DISPOSITION } from '../metadata.js.js';
-import { assert, UNDETERMINED_LANGUAGE } from '../misc.js.js';
-import { EncodedPacket, PLACEHOLDER_DATA } from '../packet.js.js';
-import { readAscii, readBytes, readU16, readU32, readU64 } from '../reader.js.js';
-import { ID3_V2_HEADER_SIZE, parseId3V2Tag, readId3V2Header } from '../id3.js.js';
+import { Demuxer } from '../demuxer.js';
+import { DEFAULT_TRACK_DISPOSITION } from '../metadata.js';
+import { assert, UNDETERMINED_LANGUAGE } from '../misc.js';
+import { EncodedPacket, PLACEHOLDER_DATA } from '../packet.js';
+import { readAscii, readBytes, readU16, readU32, readU64 } from '../reader.js';
+import { ID3_V2_HEADER_SIZE, parseId3V2Tag, readId3V2Header } from '../id3.js';
 export var WaveFormat;
 (function (WaveFormat) {
     WaveFormat[WaveFormat["PCM"] = 1] = "PCM";

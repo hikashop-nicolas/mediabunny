@@ -5,24 +5,24 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { IsobmffDemuxer } from './isobmff/isobmff-demuxer.js.js';
-import { EBMLId, MAX_HEADER_SIZE, MIN_HEADER_SIZE, readAsciiString, readElementHeader, readElementSize, readUnsignedInt, readVarIntSize, } from './matroska/ebml.js.js';
-import { MatroskaDemuxer } from './matroska/matroska-demuxer.js.js';
-import { Mp3Demuxer } from './mp3/mp3-demuxer.js.js';
-import { MP3_FRAME_HEADER_SIZE, getXingOffset, INFO, XING } from '../shared/mp3-misc.js.js';
-import { ID3_V2_HEADER_SIZE, readId3V2Header } from './id3.js.js';
-import { readNextMp3FrameHeader } from './mp3/mp3-reader.js.js';
-import { OggDemuxer } from './ogg/ogg-demuxer.js.js';
-import { WaveDemuxer } from './wave/wave-demuxer.js.js';
-import { MAX_ADTS_FRAME_HEADER_SIZE, MIN_ADTS_FRAME_HEADER_SIZE, readAdtsFrameHeader } from './adts/adts-reader.js.js';
-import { AdtsDemuxer } from './adts/adts-demuxer.js.js';
-import { readAscii, readBytes, readU32Be } from './reader.js.js';
-import { FlacDemuxer } from './flac/flac-demuxer.js.js';
-import { MpegTsDemuxer } from './mpeg-ts/mpeg-ts-demuxer.js.js';
-import { TS_PACKET_SIZE } from './mpeg-ts/mpeg-ts-misc.js.js';
-import { HlsDemuxer } from './hls/hls-demuxer.js.js';
-import { HLS_MIME_TYPE } from './hls/hls-misc.js.js';
-import { PathedSource } from './source.js.js';
+import { IsobmffDemuxer } from './isobmff/isobmff-demuxer.js';
+import { EBMLId, MAX_HEADER_SIZE, MIN_HEADER_SIZE, readAsciiString, readElementHeader, readElementSize, readUnsignedInt, readVarIntSize, } from './matroska/ebml.js';
+import { MatroskaDemuxer } from './matroska/matroska-demuxer.js';
+import { Mp3Demuxer } from './mp3/mp3-demuxer.js';
+import { MP3_FRAME_HEADER_SIZE, getXingOffset, INFO, XING } from '../shared/mp3-misc.js';
+import { ID3_V2_HEADER_SIZE, readId3V2Header } from './id3.js';
+import { readNextMp3FrameHeader } from './mp3/mp3-reader.js';
+import { OggDemuxer } from './ogg/ogg-demuxer.js';
+import { WaveDemuxer } from './wave/wave-demuxer.js';
+import { MAX_ADTS_FRAME_HEADER_SIZE, MIN_ADTS_FRAME_HEADER_SIZE, readAdtsFrameHeader } from './adts/adts-reader.js';
+import { AdtsDemuxer } from './adts/adts-demuxer.js';
+import { readAscii, readBytes, readU32Be } from './reader.js';
+import { FlacDemuxer } from './flac/flac-demuxer.js';
+import { MpegTsDemuxer } from './mpeg-ts/mpeg-ts-demuxer.js';
+import { TS_PACKET_SIZE } from './mpeg-ts/mpeg-ts-misc.js';
+import { HlsDemuxer } from './hls/hls-demuxer.js';
+import { HLS_MIME_TYPE } from './hls/hls-misc.js';
+import { PathedSource } from './source.js';
 /**
  * Base class representing an input media file format.
  * @group Input formats
