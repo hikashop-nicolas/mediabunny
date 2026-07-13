@@ -5,18 +5,18 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { buildAacAudioSpecificConfig, parseAacAudioSpecificConfig } from '../shared/aac-misc.js';
-import { AUDIO_CODECS, parsePcmCodec, PCM_AUDIO_CODECS, SUBTITLE_CODECS, VIDEO_CODECS, } from './codec.js';
-import { assert, assertNever, binarySearchLessOrEqual, CallSerializer, clamp, clearIntervalUnthrottled, floorToDivisor, last, promiseWithResolvers, roundToDivisor, setInt24, setIntervalUnthrottled, setUint24, toUint8Array, wait, } from './misc.js';
-import { SubtitleParser } from './subtitles.js';
-import { toAlaw, toUlaw } from './pcm.js';
-import { customVideoEncoders, customAudioEncoders, } from './custom-coder.js';
-import { EncodedPacket } from './packet.js';
-import { AudioSample, audioSampleToInterleavedFormat, toInterleavedAudioFormat, VideoSample, } from './sample.js';
-import { buildAudioEncoderConfig, buildVideoEncoderConfig, validateAudioEncodingConfig, validateVideoEncodingConfig, } from './encode.js';
-import { AudioResampler } from './resample.js';
-import { determineVideoPacketType } from './codec-data.js';
-import { Logging } from './logging.js';
+import { buildAacAudioSpecificConfig, parseAacAudioSpecificConfig } from '../shared/aac-misc.js.js';
+import { AUDIO_CODECS, parsePcmCodec, PCM_AUDIO_CODECS, SUBTITLE_CODECS, VIDEO_CODECS, } from './codec.js.js';
+import { assert, assertNever, binarySearchLessOrEqual, CallSerializer, clamp, clearIntervalUnthrottled, floorToDivisor, last, promiseWithResolvers, roundToDivisor, setInt24, setIntervalUnthrottled, setUint24, toUint8Array, wait, } from './misc.js.js';
+import { SubtitleParser } from './subtitles.js.js';
+import { toAlaw, toUlaw } from './pcm.js.js';
+import { customVideoEncoders, customAudioEncoders, } from './custom-coder.js.js';
+import { EncodedPacket } from './packet.js.js';
+import { AudioSample, audioSampleToInterleavedFormat, toInterleavedAudioFormat, VideoSample, } from './sample.js.js';
+import { buildAudioEncoderConfig, buildVideoEncoderConfig, validateAudioEncodingConfig, validateVideoEncodingConfig, } from './encode.js.js';
+import { AudioResampler } from './resample.js.js';
+import { determineVideoPacketType } from './codec-data.js.js';
+import { Logging } from './logging.js.js';
 /**
  * Base class for media sources. Media sources are used to add media samples to an output file.
  * @group Media sources

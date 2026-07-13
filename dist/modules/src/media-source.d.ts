@@ -5,10 +5,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { AudioCodec, SubtitleCodec, VideoCodec } from './codec.js';
-import { EncodedPacket } from './packet.js';
-import { AudioSample, VideoSample } from './sample.js';
-import { AudioEncodingConfig, VideoEncodingConfig } from './encode.js';
+import { AudioCodec, SubtitleCodec, VideoCodec } from './codec.js.js';
+import { EncodedPacket } from './packet.js.js';
+import { AudioSample, VideoSample } from './sample.js.js';
+import { AudioEncodingConfig, VideoEncodingConfig } from './encode.js.js';
 /**
  * Base class for media sources. Media sources are used to add media samples to an output file.
  * @group Media sources

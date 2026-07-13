@@ -5,8 +5,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { Av1CodecInfo, AvcDecoderConfigurationRecord, HevcDecoderConfigurationRecord, Vp9CodecInfo } from './codec-data.js';
-import { SubtitleMetadata } from './subtitles.js';
+import { Av1CodecInfo, AvcDecoderConfigurationRecord, HevcDecoderConfigurationRecord, Vp9CodecInfo } from './codec-data.js.js';
+import { SubtitleMetadata } from './subtitles.js.js';
 /**
  * List of known video codecs, ordered by encoding preference.
  * @group Codecs

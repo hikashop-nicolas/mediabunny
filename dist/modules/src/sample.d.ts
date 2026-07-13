@@ -5,7 +5,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { Rotation, SetRequired, Rational, Rectangle, MaybePromise, DeepReadonly } from './misc.js';
+import { Rotation, SetRequired, Rational, Rectangle, MaybePromise, DeepReadonly } from './misc.js.js';
 /**
  * Abstract base class for custom video sample resources. Implement this class to provide custom backing
  * for VideoSample instances.

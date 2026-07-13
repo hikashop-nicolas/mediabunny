@@ -5,12 +5,12 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { DurationMetadataRequestOptions } from './demuxer.js';
-import { InputFormat, InputFormatOptions } from './input-format.js';
-import { InputAudioTrack, InputTrack, InputVideoTrack, InputTrackQuery } from './input-track.js';
-import { PacketRetrievalOptions } from './media-sink.js';
-import { EventEmitter } from './misc.js';
-import { Source, SourceRef, SourceRequest } from './source.js';
+import { DurationMetadataRequestOptions } from './demuxer.js.js';
+import { InputFormat, InputFormatOptions } from './input-format.js.js';
+import { InputAudioTrack, InputTrack, InputVideoTrack, InputTrackQuery } from './input-track.js.js';
+import { PacketRetrievalOptions } from './media-sink.js.js';
+import { EventEmitter } from './misc.js.js';
+import { Source, SourceRef, SourceRequest } from './source.js.js';
 export declare const DEFAULT_SOURCE_CACHE_GROUP = 1;
 export declare const ENCRYPTION_KEY_CACHE_GROUP = 2;
 /**
@@ -146,7 +146,7 @@ export declare class Input<S extends Source = Source> extends EventEmitter<Input
      * Returns descriptive metadata tags about the media file, such as title, author, date, cover art, or other
      * attached files.
      */
-    getMetadataTags(): Promise<import("./metadata.js").MetadataTags>;
+    getMetadataTags(): Promise<import("./metadata.js.js").MetadataTags>;
     /**
      * Disposes this input and frees connected resources. When an input is disposed, ongoing read operations will be
      * canceled, all future read operations will fail, any open decoders will be closed, and all ongoing media sink

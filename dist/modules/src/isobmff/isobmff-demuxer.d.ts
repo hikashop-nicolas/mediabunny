@@ -5,15 +5,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { AacCodecInfo, AudioCodec, ProresFourCc, VideoCodec } from '../codec.js';
-import { Av1CodecInfo, AvcDecoderConfigurationRecord, HevcDecoderConfigurationRecord, Vp9CodecInfo } from '../codec-data.js';
-import { Demuxer } from '../demuxer.js';
-import { Input } from '../input.js';
-import { InputTrackBacking } from '../input-track.js';
-import { Rotation } from '../misc.js';
-import { PsshBox } from './isobmff-misc.js';
-import { FileSlice, Reader } from '../reader.js';
-import { MetadataTags, TrackDisposition } from '../metadata.js';
+import { AacCodecInfo, AudioCodec, ProresFourCc, VideoCodec } from '../codec.js.js';
+import { Av1CodecInfo, AvcDecoderConfigurationRecord, HevcDecoderConfigurationRecord, Vp9CodecInfo } from '../codec-data.js.js';
+import { Demuxer } from '../demuxer.js.js';
+import { Input } from '../input.js.js';
+import { InputTrackBacking } from '../input-track.js.js';
+import { Rotation } from '../misc.js.js';
+import { PsshBox } from './isobmff-misc.js.js';
+import { FileSlice, Reader } from '../reader.js.js';
+import { MetadataTags, TrackDisposition } from '../metadata.js.js';
 type InternalTrack = {
     id: number;
     demuxer: IsobmffDemuxer;

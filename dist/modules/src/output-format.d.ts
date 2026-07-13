@@ -5,11 +5,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { AudioCodec, MediaCodec, SubtitleCodec, VideoCodec } from './codec.js';
-import { MediaSource } from './media-source.js';
-import { OutputTrack, TrackType } from './output.js';
-import { MaybePromise, FilePath } from './misc.js';
-import { Target } from './target.js';
+import { AudioCodec, MediaCodec, SubtitleCodec, VideoCodec } from './codec.js.js';
+import { MediaSource } from './media-source.js.js';
+import { OutputTrack, TrackType } from './output.js.js';
+import { MaybePromise, FilePath } from './misc.js.js';
+import { Target } from './target.js.js';
 /**
  * Specifies an inclusive range of integers.
  * @group Miscellaneous

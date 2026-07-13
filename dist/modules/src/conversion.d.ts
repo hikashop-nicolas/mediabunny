@@ -5,14 +5,14 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { AudioCodec, VideoCodec } from './codec.js';
-import { Quality } from './encode.js';
-import { Input } from './input.js';
-import { InputAudioTrack, InputTrack, InputVideoTrack } from './input-track.js';
-import { MaybePromise, Rotation } from './misc.js';
-import { Output, OutputTrackGroup } from './output.js';
-import { AudioSample, CropRectangle, VideoSample, VideoSampleResource } from './sample.js';
-import { MetadataTags } from './metadata.js';
+import { AudioCodec, VideoCodec } from './codec.js.js';
+import { Quality } from './encode.js.js';
+import { Input } from './input.js.js';
+import { InputAudioTrack, InputTrack, InputVideoTrack } from './input-track.js.js';
+import { MaybePromise, Rotation } from './misc.js.js';
+import { Output, OutputTrackGroup } from './output.js.js';
+import { AudioSample, CropRectangle, VideoSample, VideoSampleResource } from './sample.js.js';
+import { MetadataTags } from './metadata.js.js';
 /**
  * The options for media file conversion.
  * @group Conversion

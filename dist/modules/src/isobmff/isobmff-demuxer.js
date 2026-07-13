@@ -5,20 +5,20 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { parseAacAudioSpecificConfig } from '../../shared/aac-misc.js';
-import { extractAudioCodecString, extractVideoCodecString, OPUS_SAMPLE_RATE, parsePcmCodec, PCM_AUDIO_CODECS, PRORES_FOURCCS, } from '../codec.js';
-import { extractAv1CodecInfoFromPacket, extractVp9CodecInfoFromPacket, FlacBlockType, parseEac3Config, getEac3SampleRate, getEac3ChannelCount, AC3_ACMOD_CHANNEL_COUNTS, } from '../codec-data.js';
-import { Demuxer } from '../demuxer.js';
-import { assert, binarySearchExact, binarySearchLessOrEqual, bytesToHexString, COLOR_PRIMARIES_MAP_INVERSE, findLastIndex, isIso639Dash2LanguageCode, last, MATRIX_COEFFICIENTS_MAP_INVERSE, normalizeRotation, roundToMultiple, textDecoder, TRANSFER_CHARACTERISTICS_MAP_INVERSE, UNDETERMINED_LANGUAGE, toDataView, roundIfAlmostInteger, hexStringToBytes, HEX_STRING_REGEX, } from '../misc.js';
-import { EncodedPacket, PLACEHOLDER_DATA } from '../packet.js';
-import { buildIsobmffMimeType, parsePsshBoxContents, psshBoxesAreEqual } from './isobmff-misc.js';
-import { MAX_BOX_HEADER_SIZE, MIN_BOX_HEADER_SIZE, readBoxHeader, readDataBox, readFixed_16_16, readFixed_2_30, readIsomVariableInteger, readMetadataStringShort, } from './isobmff-reader.js';
-import { readBytes, readF64Be, readI16Be, readI32Be, readI64Be, readU16Be, readU24Be, readU32Be, readU64Be, readU8, readAscii, } from '../reader.js';
-import { DEFAULT_TRACK_DISPOSITION, RichImageData } from '../metadata.js';
-import { AC3_SAMPLE_RATES } from '../../shared/ac3-misc.js';
-import { Bitstream } from '../../shared/bitstream.js';
-import { Aes128CbcContext } from '../aes.js';
-import { Logging } from '../logging.js';
+import { parseAacAudioSpecificConfig } from '../../shared/aac-misc.js.js';
+import { extractAudioCodecString, extractVideoCodecString, OPUS_SAMPLE_RATE, parsePcmCodec, PCM_AUDIO_CODECS, PRORES_FOURCCS, } from '../codec.js.js';
+import { extractAv1CodecInfoFromPacket, extractVp9CodecInfoFromPacket, FlacBlockType, parseEac3Config, getEac3SampleRate, getEac3ChannelCount, AC3_ACMOD_CHANNEL_COUNTS, } from '../codec-data.js.js';
+import { Demuxer } from '../demuxer.js.js';
+import { assert, binarySearchExact, binarySearchLessOrEqual, bytesToHexString, COLOR_PRIMARIES_MAP_INVERSE, findLastIndex, isIso639Dash2LanguageCode, last, MATRIX_COEFFICIENTS_MAP_INVERSE, normalizeRotation, roundToMultiple, textDecoder, TRANSFER_CHARACTERISTICS_MAP_INVERSE, UNDETERMINED_LANGUAGE, toDataView, roundIfAlmostInteger, hexStringToBytes, HEX_STRING_REGEX, } from '../misc.js.js';
+import { EncodedPacket, PLACEHOLDER_DATA } from '../packet.js.js';
+import { buildIsobmffMimeType, parsePsshBoxContents, psshBoxesAreEqual } from './isobmff-misc.js.js';
+import { MAX_BOX_HEADER_SIZE, MIN_BOX_HEADER_SIZE, readBoxHeader, readDataBox, readFixed_16_16, readFixed_2_30, readIsomVariableInteger, readMetadataStringShort, } from './isobmff-reader.js.js';
+import { readBytes, readF64Be, readI16Be, readI32Be, readI64Be, readU16Be, readU24Be, readU32Be, readU64Be, readU8, readAscii, } from '../reader.js.js';
+import { DEFAULT_TRACK_DISPOSITION, RichImageData } from '../metadata.js.js';
+import { AC3_SAMPLE_RATES } from '../../shared/ac3-misc.js.js';
+import { Bitstream } from '../../shared/bitstream.js.js';
+import { Aes128CbcContext } from '../aes.js.js';
+import { Logging } from '../logging.js.js';
 export class IsobmffDemuxer extends Demuxer {
     constructor(input) {
         super(input);

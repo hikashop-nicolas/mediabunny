@@ -5,8 +5,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { MaybePromise } from './misc.js';
-import { Reader } from './reader.js';
+import { MaybePromise } from './misc.js.js';
+import { Reader } from './reader.js.js';
 export declare const AES_128_BLOCK_SIZE = 16;
 export type Aes128CbcContextInit = {
     key: Uint8Array;

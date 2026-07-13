@@ -5,16 +5,16 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { AudioCodec } from '../codec.js';
-import { Demuxer } from '../demuxer.js';
-import { Input } from '../input.js';
-import { InputAudioTrackBacking } from '../input-track.js';
-import { PacketRetrievalOptions } from '../media-sink.js';
-import { MetadataTags } from '../metadata.js';
-import { AsyncMutex } from '../misc.js';
-import { EncodedPacket } from '../packet.js';
-import { Reader } from '../reader.js';
-import { AdtsFrameHeader } from './adts-reader.js';
+import { AudioCodec } from '../codec.js.js';
+import { Demuxer } from '../demuxer.js.js';
+import { Input } from '../input.js.js';
+import { InputAudioTrackBacking } from '../input-track.js.js';
+import { PacketRetrievalOptions } from '../media-sink.js.js';
+import { MetadataTags } from '../metadata.js.js';
+import { AsyncMutex } from '../misc.js.js';
+import { EncodedPacket } from '../packet.js.js';
+import { Reader } from '../reader.js.js';
+import { AdtsFrameHeader } from './adts-reader.js.js';
 export declare const SAMPLES_PER_AAC_FRAME = 1024;
 type Sample = {
     timestamp: number;

@@ -5,9 +5,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
-import { Bitstream } from '../../shared/bitstream.js';
-import { assert, assertNever } from '../misc.js';
-import { readBytes, readU16Be, readU8 } from '../reader.js';
+import { Bitstream } from '../../shared/bitstream.js.js';
+import { assert, assertNever } from '../misc.js.js';
+import { readBytes, readU16Be, readU8 } from '../reader.js.js';
 // https://www.rfc-editor.org/rfc/rfc9639.html#name-block-size-bits
 export const getBlockSizeOrUncommon = (bits) => {
     if (bits === 0b0000) {
