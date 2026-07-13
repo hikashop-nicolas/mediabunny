@@ -1884,6 +1884,7 @@ const audioCodecToConfigurationBox = (codec: AudioCodec, isQuickTime: boolean) =
 
 const SUBTITLE_CODEC_TO_BOX_NAME: Record<SubtitleCodec, string> = {
 	webvtt: 'wvtt',
+	ass: 'wvtt', // unused: ISOBMFF rejects the 'ass' codec at track-add time
 };
 
 const SUBTITLE_CODEC_TO_CONFIGURATION_BOX: Record<
@@ -1891,6 +1892,7 @@ const SUBTITLE_CODEC_TO_CONFIGURATION_BOX: Record<
 	(trackData: IsobmffSubtitleTrackData) => Box | null
 > = {
 	webvtt: vttC,
+	ass: vttC, // unused: ISOBMFF rejects the 'ass' codec at track-add time
 };
 
 const getLanguageCodeInt = (code: string) => {

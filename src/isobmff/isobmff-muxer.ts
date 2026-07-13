@@ -332,6 +332,7 @@ export class IsobmffMuxer extends Muxer {
 			} else {
 				const map: Record<SubtitleCodec, string> = {
 					webvtt: 'wvtt',
+					ass: 'wvtt', // unused: ISOBMFF rejects the 'ass' codec at track-add time
 				};
 				return map[trackData.track.source._codec];
 			}
