@@ -771,6 +771,26 @@ export class IsobmffDemuxer extends Demuxer {
                             else if (codecName === 'alaw') {
                                 track.info.codec = 'alaw';
                             }
+                            else if (codecName === 'alac') {
+                                track.info.codec = 'alac';
+                                // The sample entry is not to be believed for ALAC: encoders write a
+                                // channel count of 2 no matter the real one, and its sample rate is a
+                                // 16.16 fixed-point field that cannot even represent 96 kHz. The magic
+                                // cookie read just above (the nested 'alac' box) is authoritative, so
+                                // take the channel count, and the sample rate, from there.
+                                const cookie = track.info.codecDescription;
+                                if (cookie && cookie.byteLength >= 24) {
+                                    const view = toDataView(cookie);
+                                    const cookieChannels = view.getUint8(9);
+                                    const cookieSampleRate = view.getUint32(20);
+                                    if (cookieChannels > 0) {
+                                        track.info.numberOfChannels = cookieChannels;
+                                    }
+                                    if (cookieSampleRate > 0) {
+                                        track.info.sampleRate = cookieSampleRate;
+                                    }
+                                }
+                            }
                             else if (codecName === 'ac-3') {
                                 track.info.codec = 'ac3';
                             }
@@ -1001,6 +1021,27 @@ export class IsobmffDemuxer extends Demuxer {
                     }
                     assert(track.info);
                     track.info.codecDescription = readBytes(slice, boxInfo.contentSize);
+                }
+                ;
+                break;
+            // The ALACSpecificConfig ("magic cookie"), nested inside the alac sample entry. It
+            // carries the frame length, bit depth, channel count and sample rate, and a decoder
+            // cannot be configured without it. Note the box shares its name with the sample
+            // entry that contains it; this handler sees the inner one.
+            //
+            // It is a FullBox, so the content opens with a version and flags. Those are dropped
+            // here: what every ALAC decoder calls the magic cookie is the 24-byte config that
+            // follows them, and handing consumers anything else would just make each of them
+            // strip the same four bytes.
+            case 'alac':
+                {
+                    const track = this.currentTrack;
+                    if (!track) {
+                        break;
+                    }
+                    assert(track.info);
+                    const content = readBytes(slice, boxInfo.contentSize);
+                    track.info.codecDescription = content.byteLength > 4 ? content.subarray(4) : content;
                 }
                 ;
                 break;

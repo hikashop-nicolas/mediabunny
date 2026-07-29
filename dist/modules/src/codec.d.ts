@@ -24,13 +24,13 @@ export declare const PCM_AUDIO_CODECS: readonly ["pcm-s16", "pcm-s16be", "pcm-s2
  * @group Codecs
  * @public
  */
-export declare const NON_PCM_AUDIO_CODECS: readonly ["aac", "opus", "mp3", "vorbis", "flac", "ac3", "eac3"];
+export declare const NON_PCM_AUDIO_CODECS: readonly ["aac", "opus", "mp3", "vorbis", "flac", "ac3", "eac3", "alac"];
 /**
  * List of known audio codecs, ordered by encoding preference.
  * @group Codecs
  * @public
  */
-export declare const AUDIO_CODECS: readonly ["aac", "opus", "mp3", "vorbis", "flac", "ac3", "eac3", "pcm-s16", "pcm-s16be", "pcm-s24", "pcm-s24be", "pcm-s32", "pcm-s32be", "pcm-f32", "pcm-f32be", "pcm-f64", "pcm-f64be", "pcm-u8", "pcm-s8", "ulaw", "alaw"];
+export declare const AUDIO_CODECS: readonly ["aac", "opus", "mp3", "vorbis", "flac", "ac3", "eac3", "alac", "pcm-s16", "pcm-s16be", "pcm-s24", "pcm-s24be", "pcm-s32", "pcm-s32be", "pcm-f32", "pcm-f32be", "pcm-f64", "pcm-f64be", "pcm-u8", "pcm-s8", "ulaw", "alaw"];
 /**
  * List of known subtitle codecs, ordered by encoding preference.
  * @group Codecs
@@ -91,7 +91,7 @@ export declare const extractVideoCodecString: (trackInfo: {
     av1CodecInfo: Av1CodecInfo | null;
     proresFormat: ProresFourCc | null;
 }) => string;
-export declare const buildAudioCodecString: (codec: AudioCodec, numberOfChannels: number, sampleRate: number) => "vorbis" | "pcm-s16" | "pcm-s16be" | "pcm-s24" | "pcm-s24be" | "pcm-s32" | "pcm-s32be" | "pcm-f32" | "pcm-f32be" | "pcm-f64" | "pcm-f64be" | "pcm-u8" | "pcm-s8" | "ulaw" | "alaw" | "opus" | "mp3" | "flac" | "ac-3" | "ec-3" | "mp4a.40.29" | "mp4a.40.5" | "mp4a.40.2";
+export declare const buildAudioCodecString: (codec: AudioCodec, numberOfChannels: number, sampleRate: number) => "vorbis" | "pcm-s16" | "pcm-s16be" | "pcm-s24" | "pcm-s24be" | "pcm-s32" | "pcm-s32be" | "pcm-f32" | "pcm-f32be" | "pcm-f64" | "pcm-f64be" | "pcm-u8" | "pcm-s8" | "ulaw" | "alaw" | "opus" | "mp3" | "flac" | "alac" | "ac-3" | "ec-3" | "mp4a.40.29" | "mp4a.40.5" | "mp4a.40.2";
 export type AacCodecInfo = {
     isMpeg2: boolean;
     objectType: number | null;

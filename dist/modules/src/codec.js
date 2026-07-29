@@ -54,6 +54,7 @@ export const NON_PCM_AUDIO_CODECS = [
     'flac',
     'ac3',
     'eac3',
+    'alac',
 ];
 /**
  * List of known audio codecs, ordered by encoding preference.
@@ -464,6 +465,9 @@ export const buildAudioCodecString = (codec, numberOfChannels, sampleRate) => {
     else if (codec === 'eac3') {
         return 'ec-3';
     }
+    else if (codec === 'alac') {
+        return 'alac';
+    }
     else if (PCM_AUDIO_CODECS.includes(codec)) {
         return codec;
     }
@@ -507,6 +511,9 @@ export const extractAudioCodecString = (trackInfo) => {
     }
     else if (codec === 'eac3') {
         return 'ec-3';
+    }
+    else if (codec === 'alac') {
+        return 'alac';
     }
     else if (codec && PCM_AUDIO_CODECS.includes(codec)) {
         return codec;
@@ -617,6 +624,9 @@ export const inferCodecFromCodecString = (codecString) => {
     }
     else if (codecString === 'ec-3' || codecString === 'eac3') {
         return 'eac3';
+    }
+    else if (codecString === 'alac') {
+        return 'alac';
     }
     else if (codecString === 'ulaw') {
         return 'ulaw';
@@ -893,6 +903,19 @@ export const validateAudioChunkMetadata = (metadata) => {
         // EAC3-specific validation
         if (metadata.decoderConfig.codec !== 'ec-3') {
             throw new TypeError('Audio chunk metadata decoder configuration codec string for EC-3 must be "ec-3".');
+        }
+    }
+    else if (metadata.decoderConfig.codec.startsWith('alac')) {
+        // ALAC-specific validation
+        if (metadata.decoderConfig.codec !== 'alac') {
+            throw new TypeError('Audio chunk metadata decoder configuration codec string for ALAC must be "alac".');
+        }
+        // The magic cookie (the ALACSpecificConfig from the sample entry's 'alac' box) is not
+        // optional: it carries the frame length, bit depth and channel count, without which a
+        // decoder cannot be configured at all.
+        if (!metadata.decoderConfig.description) {
+            throw new TypeError('Audio chunk metadata decoder configuration for ALAC must include a description, which is expected'
+                + ' to be the ALACSpecificConfig magic cookie.');
         }
     }
     else if (metadata.decoderConfig.codec.startsWith('pcm')
