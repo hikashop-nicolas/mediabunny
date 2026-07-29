@@ -75,6 +75,7 @@ export const NON_PCM_AUDIO_CODECS = [
 	'flac',
 	'ac3',
 	'eac3',
+	'alac',
 ] as const;
 /**
  * List of known audio codecs, ordered by encoding preference.
@@ -596,6 +597,8 @@ export const buildAudioCodecString = (codec: AudioCodec, numberOfChannels: numbe
 		return 'ac-3';
 	} else if (codec === 'eac3') {
 		return 'ec-3';
+	} else if (codec === 'alac') {
+		return 'alac';
 	} else if ((PCM_AUDIO_CODECS as readonly string[]).includes(codec)) {
 		return codec;
 	}
@@ -645,6 +648,8 @@ export const extractAudioCodecString = (trackInfo: {
 		return 'ac-3';
 	} else if (codec === 'eac3') {
 		return 'ec-3';
+	} else if (codec === 'alac') {
+		return 'alac';
 	} else if (codec && (PCM_AUDIO_CODECS as readonly string[]).includes(codec)) {
 		return codec;
 	}
@@ -757,6 +762,8 @@ export const inferCodecFromCodecString = (codecString: string): MediaCodec | nul
 		return 'ac3';
 	} else if (codecString === 'ec-3' || codecString === 'eac3') {
 		return 'eac3';
+	} else if (codecString === 'alac') {
+		return 'alac';
 	} else if (codecString === 'ulaw') {
 		return 'ulaw';
 	} else if (codecString === 'alaw') {
@@ -1119,6 +1126,22 @@ export const validateAudioChunkMetadata = (metadata: EncodedAudioChunkMetadata |
 
 		if (metadata.decoderConfig.codec !== 'ec-3') {
 			throw new TypeError('Audio chunk metadata decoder configuration codec string for EC-3 must be "ec-3".');
+		}
+	} else if (metadata.decoderConfig.codec.startsWith('alac')) {
+		// ALAC-specific validation
+
+		if (metadata.decoderConfig.codec !== 'alac') {
+			throw new TypeError('Audio chunk metadata decoder configuration codec string for ALAC must be "alac".');
+		}
+
+		// The magic cookie (the ALACSpecificConfig from the sample entry's 'alac' box) is not
+		// optional: it carries the frame length, bit depth and channel count, without which a
+		// decoder cannot be configured at all.
+		if (!metadata.decoderConfig.description) {
+			throw new TypeError(
+				'Audio chunk metadata decoder configuration for ALAC must include a description, which is expected'
+				+ ' to be the ALACSpecificConfig magic cookie.',
+			);
 		}
 	} else if (
 		metadata.decoderConfig.codec.startsWith('pcm')

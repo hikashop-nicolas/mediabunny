@@ -1645,7 +1645,12 @@ describe('Audio', async () => {
 		});
 	});
 
-	for (const codec of NON_PCM_AUDIO_CODECS) {
+	// ALAC is the one codec here that mediabunny can demux but not encode: there is no ALAC
+	// encoder in WebCodecs, in the server extension, or in any extension package. It is
+	// supported so that ALAC files can be read, so it has nothing to round-trip.
+	const ROUND_TRIPPABLE_AUDIO_CODECS = NON_PCM_AUDIO_CODECS.filter((codec) => codec !== 'alac');
+
+	for (const codec of ROUND_TRIPPABLE_AUDIO_CODECS) {
 		test(`${codec} encode & decode, negative timestamps`, async () => {
 			await timestampTest(codec, -1);
 		});
